@@ -25,11 +25,10 @@
             line-height: 1.7;
         }
 
-        /* Clean Top Navigation Bar */
         header {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,16 +38,17 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            margin: 0 auto;
         }
 
         .brand img {
-            height: 50px;
-            width: 50px;
+            height: 60px;
+            width: 60px;
             object-fit: contain;
         }
 
         .brand h1 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin: 0;
             text-transform: lowercase;
             letter-spacing: -0.5px;
@@ -60,162 +60,269 @@
             font-weight: 700;
         }
 
-        /* Inspiring Intro Section */
-        .intro-quote {
-            max-width: 700px;
-            margin: 60px auto 40px auto;
+        .section-title {
+            text-align: center;
+            font-size: 1.6rem;
+            color: var(--sky-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 60px 0 30px 0;
+        }
+
+        .text-container {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
             padding: 0 20px;
             text-align: center;
         }
 
-        .intro-quote h2 {
-            font-family: Georgia, serif;
-            font-size: 2.2rem;
-            font-style: italic;
-            font-weight: 400;
-            line-height: 1.3;
-            color: var(--primary-dark);
-            margin: 0 0 20px 0;
-        }
-
-        .intro-quote h2 span {
-            color: var(--sunset-orange);
-        }
-
-        .intro-quote p {
-            font-size: 1.1rem;
-            color: #666;
-            margin: 0;
-        }
-
-        /* Hero Image Layout (Historic Press Piece) */
-        .hero-container {
-            max-width: var(--max-width);
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-        }
-
-        .hero-box {
-            background: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border-bottom: 4px solid var(--sky-blue);
-        }
-
-        .hero-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Structural Chapters */
-        .chapter-container {
-            max-width: var(--max-width);
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .chapter-header {
-            border-bottom: 2px solid var(--sky-blue);
-            padding-bottom: 8px;
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .chapter-header h3 {
-            font-size: 1.2rem;
-            margin: 0;
+        .text-container h3 {
+            font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--primary-dark);
+            margin-bottom: 10px;
         }
 
-        .chapter-num {
-            font-family: Georgia, serif;
-            font-size: 1.3rem;
-            font-style: italic;
+        .text-container p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .values-list, .goals-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 40px auto;
+            max-width: 600px;
+        }
+
+        .values-list li, .goals-list li {
+            font-size: 1.05rem;
+            padding: 6px 0;
+            color: #333;
+        }
+
+        .goals-list li {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .goals-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
             color: var(--sunset-orange);
             font-weight: bold;
         }
 
-        /* Content Row Layouts */
-        .content-row {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            margin-bottom: 60px;
+        /* Narrative Mixed Media Grid Layout */
+        .media-narrative-grid {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
         @media (min-width: 768px) {
-            .content-row {
+            .media-narrative-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .span-two {
+                grid-column: span 2;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        .card img, .card video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Clickable Zoom Settings */
+        .clickable-media {
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .clickable-media:hover {
+            opacity: 0.95;
+        }
+
+        /* Co-operation Grid Styles */
+        .cooperation-block {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (min-width: 768px) {
+            .cooperation-block {
                 flex-direction: row;
-                align-items: center;
             }
-            .content-row.invert {
-                flex-direction: row-reverse;
-            }
-            .media-block, .text-block {
+            .coop-text, .coop-media {
                 flex: 1;
             }
         }
 
-        .media-block img, .media-block video {
-            width: 100%;
+        .coop-text {
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .coop-text a {
+            color: var(--sky-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .coop-media img {
+            max-width: 100%;
             height: auto;
             border-radius: 6px;
-            display: block;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease;
         }
 
-        .text-block h4 {
-            font-size: 1.25rem;
-            margin: 0 0 12px 0;
-            color: var(--primary-dark);
+        .coop-media img:hover {
+            transform: scale(1.02);
         }
 
-        .text-block p {
-            font-size: 1.05rem;
-            color: #555;
-            margin: 0;
-        }
-
-        /* Partner Footer Banner */
-        .partner-banner {
-            max-width: var(--max-width);
-            margin: 80px auto 20px auto;
-            padding: 30px 20px;
-            text-align: center;
+        /* Clean Web3 Forms Web Contact Section */
+        .contact-section {
+            background: #ffffff;
             border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 60px 20px;
+            margin-top: 80px;
         }
 
-        .partner-banner p {
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
             font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #555;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--bg-light);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sky-blue);
+            background: #ffffff;
+        }
+
+        .submit-btn {
+            background: var(--sunset-orange);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #777;
-            margin-bottom: 15px;
+            transition: background 0.2s ease;
         }
 
-        .partner-banner img {
-            height: 65px;
+        .submit-btn:hover {
+            background: #e05322;
+        }
+
+        #form-response {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Native Lightbox Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 17, 17, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-img {
+            max-width: 100%;
+            max-height: 90vh;
             object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
         }
 
-        /* Minimal Footer */
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
         footer {
             text-align: center;
-            padding: 20px 20px 40px 20px;
+            padding: 40px 20px;
             font-size: 0.9rem;
-            color: #999;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
-    <!-- Simple Top Navigation -->
     <header>
         <div class="brand">
             <img src="babalift-logo.png" alt="Babalift Logo">
@@ -224,212 +331,233 @@
     </header>
 
     <main>
-        <!-- Inspiring Quote Intro Section -->
-        <section class="intro-quote">
-            <h2>Built by hand. Powered by <span>solidarity</span>.</h2>
-            <p>Babalift develops open-source, multi-seat tandem blueprints designed to share the freedom of movement and restore independent human connection across communities.</p>
+        <!-- The Project Narrative Section -->
+        <section class="text-container">
+            <h2 class="section-title" style="margin-top: 20px;">The Project</h2>
+            <p>Babalift develops handmade multi-seat bicycles crafted from recycled materials and open-source ideas. What began as a journey to give rides and interview anyone on peace and non-violence in Africa evolved into a broader vision of inclusive mobility: bicycles designed not only for transport, but for participation, dignity, connection and joy. Every prototype is built through experimentation, collaboration and solidarity.</p>
         </section>
 
-        <!-- Main Historic Image Showcase -->
-        <section class="hero-container">
-            <div class="hero-box">
-                <img src="newsoncamera.jpg" alt="Historical press layout highlighting travel journeys for peace">
+        <!-- Contextualized Media Section 1: Blueprints and Framing -->
+        <section class="media-narrative-grid">
+            <div class="card">
+                <img src="Dpencil.jpeg" class="clickable-media" alt="Technical pencil design blueprint layout">
+            </div>
+            <div class="card">
+                <img src="Ddesign-colors.jpeg" class="clickable-media" alt="Digital color-mapped structural schema render">
+            </div>
+            <div class="card">
+                <img src="Bcutting.jpeg" alt="Chassis steel sizing modifications inside the workshop">
+            </div>
+            <div class="card">
+                <img src="Bwelding1.jpeg" alt="Stick weld fabrication procedures completed outdoors">
             </div>
         </section>
 
-        <!-- Chapter 1: Design -->
-        <section class="chapter-container">
-            <div class="chapter-header">
-                <h3>Chapter I: Design & Geometry Planning</h3>
-                <span class="chapter-num">01</span>
-            </div>
+        <!-- About Framework Section -->
+        <section class="text-container">
+            <h2 class="section-title">About</h2>
             
-            <div class="content-row">
-                <div class="media-block">
-                    <img src="Dpencil.jpeg" alt="Technical pencil design blueprint on graph paper">
-                </div>
-                <div class="text-block">
-                    <h4>The Geometry of Inclusion</h4>
-                    <p>Every chassis begins on graph paper, calculating exact weight distribution, front-fork rigidity, and structural load balances. Repositioning the front rider into a recumbent posture lowers the center of gravity, maximizing comfort and handling safety.</p>
-                </div>
-            </div>
+            <h3>Mission</h3>
+            <p>To create inclusive, open-source mobility solutions that bring people together through shared journeys, freedom of movement and human connection.</p>
+            
+            <h3>Vision</h3>
+            <p>A world where mobility is accessible, joyful and community-driven — built by people, for people.</p>
+            
+            <h3>Values</h3>
+            <ul class="values-list">
+                <li>Solidarity over profit</li>
+                <li>Human connection through movement</li>
+                <li>Open-source creativity</li>
+                <li>Reuse and sustainability</li>
+                <li>Inclusion and accessibility</li>
+                <li>Handmade innovation</li>
+                <li>Shared experiences across cultures</li>
+            </ul>
 
-            <div class="content-row invert">
-                <div class="media-block">
-                    <img src="Ddesign-colors.jpeg" alt="Digital 3D color model design layout">
+            <h3>Goals</h3>
+            <ul class="goals-list">
+                <li>Build affordable multi-seat bicycles using recycled materials</li>
+                <li>Support mobility for children and people with disabilities</li>
+                <li>Share open-source designs worldwide</li>
+                <li>Train local communities in fabrication and repair</li>
+                <li>Connect people through shared rides and collaborative journeys</li>
+                <li>Expand the project across Africa, Europe and Asia</li>
+            </ul>
+        </section>
+
+        <!-- Contextualized Media Section 2: Active Operational Road Trials -->
+        <section class="media-narrative-grid">
+            <div class="card">
+                <video controls muted>
+                    <source src="gangakidspilots.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="card">
+                <video controls muted>
+                    <source src="indiankids1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="card">
+                <img src="annavos.jpg" alt="Two riders during structural balance road trials">
+            </div>
+            <div class="card">
+                <img src="mumonbike.jpeg" alt="Elderly participant navigating shared neighborhood routes">
+            </div>
+            <div class="card">
+                <img src="Pkidsgirlsafrica.jpg" alt="Play trials showcasing localized playground inclusion">
+            </div>
+            <div class="card">
+                <img src="disabled1.jpeg" alt="Chassis framework navigating rugged gravel pathways">
+            </div>
+            <div class="card">
+                <img src="disabled2.jpeg" alt="Chassis geometry assessments inside tight urban spaces">
+            </div>
+            <div class="card">
+                <img src="gangabest.jpeg" alt="The custom vehicle setup along an open waterfront area">
+            </div>
+            <div class="card">
+                <video controls muted>
+                    <source src="nasla.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="card">
+                <img src="Bcompactable.jpeg" alt="Folding joints system reducing storage and shipping footprint">
+            </div>
+            <!-- Clickable Historical Press Archive Feature -->
+            <div class="card span-two">
+                <img src="newsoncamera.jpg" class="clickable-media" alt="Historical verification media clipping layout">
+            </div>
+            <div class="card span-two">
+                <img src="newsnewvision.jpg" class="clickable-media" alt="Historical print publication journey logs tracking thousands of kilometers">
+            </div>
+        </section>
+
+        <!-- Cooperation Block with Functional External Redirection Anchor -->
+        <section class="text-container">
+            <h2 class="section-title">Cooperation</h2>
+            <div class="cooperation-block">
+                <div class="coop-text" style="text-align: left;">
+                    <p>In the past 16 years we have cooperated with many realities.</p>
+                    <p>Partnered with organizations and companies. Sponsoring NGOs and associations including ELOI, Red Cross, Co.P.E., Mondo Sostenibile, BlockOut, Couchsurfing, ESN, and many more.</p>
+                    <p>Our main Partner is **Anymore Onlus**. Any donation is welcome, only, thru them at <a href="https://anymoreonlus.org" target="_blank" rel="noopener">anymoreonlus.org</a>.</p>
+                    <p>THANKS!</p>
                 </div>
-                <div class="text-block">
-                    <h4>Mapping Structural Pathways</h4>
-                    <p>Transitioning to digital render schemas allows precise analysis of tube intersections and high-stress points. Color mapping ensures independent global builders can interpret and replicate the assembly blueprint using localized materials.</p>
+                <div class="coop-media">
+                    <a href="https://anymoreonlus.org" target="_blank" rel="noopener" title="Visit Anymore Onlus website">
+                        <img src="anymore-logo.png" alt="Anymore Onlus Collaboration Official Profile Logo">
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Chapter 2: Building -->
-        <section class="chapter-container">
-            <div class="chapter-header">
-                <h3>Chapter II: Workshop & Fabrication</h3>
-                <span class="chapter-num">02</span>
+        <!-- Secure Operational Web3 AJAX Transmission Form -->
+        <section class="contact-section">
+            <div class="text-container" style="margin-bottom: 30px;">
+                <h3>Get in Touch</h3>
+                <p>Have questions about building your own frame or collaborating with the initiative? Send us a direct message below.</p>
             </div>
+            <form id="web3-contact-form" class="contact-form">
+                <!-- Direct Access Web3Forms API Key Configured to Route to Destination -->
+                <input type="hidden" name="access_key" value="63ffdf24-a3f2-4bc7-9b2f-9818815f9038">
+                <input type="hidden" name="subject" value="New Website Inquiry from Babalift.org">
+                <input type="hidden" name="replyto" id="form-replyto">
 
-            <div class="content-row">
-                <div class="media-block">
-                    <img src="Bcutting.jpeg" alt="Cutting frame components inside the workshop">
+                <div class="form-group">
+                    <label for="form-name">Name</label>
+                    <input type="text" id="form-name" name="name" placeholder="Your Name" required>
                 </div>
-                <div class="text-block">
-                    <h4>Precision Frame Sizing</h4>
-                    <p>Chassis elements are measured and cut by hand from standard structural steel. We prioritize readily accessible mechanical components so the vehicles can be built, maintained, and repaired easily in any local environment.</p>
+                <div class="form-group">
+                    <label for="form-email">Email Address</label>
+                    <input type="email" id="form-email" name="email" placeholder="yourname@domain.com" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="form-message">Message</label>
+                    <textarea id="form-message" name="message" rows="5" placeholder="Write your message details here..." required></textarea>
+                </div>
 
-            <div class="content-row invert">
-                <div class="media-block">
-                    <img src="Bwelding1.jpeg" alt="Welding bicycle frame connections outdoors">
-                </div>
-                <div class="text-block">
-                    <h4>Fusing the Connections</h4>
-                    <p>Using standard stick welding units, individual junctions are permanently fused. This deliberate hands-on engineering gives the adaptive chassis the resilience required to navigate uneven infrastructure routes reliably.</p>
-                </div>
-            </div>
-
-            <div class="content-row">
-                <div class="media-block">
-                    <img src="Bcompactable.jpeg" alt="Fully folded grey bicycle chassis frame">
-                </div>
-                <div class="text-block">
-                    <h4>Compact Portable Engineering</h4>
-                    <p>Logistical constraints shouldn't limit community access. The prototype frame features specialized folding joints, reducing its storage footprint for effortless transportation and international relocation transitions.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Chapter 3: Community -->
-        <section class="chapter-container">
-            <div class="chapter-header">
-                <h3>Chapter III: Community Integration & Operations</h3>
-                <span class="chapter-num">03</span>
-            </div>
-
-            <div class="content-row invert">
-                <div class="media-block">
-                    <img src="annavos.jpg" alt="Two riders during open-air road trials">
-                </div>
-                <div class="text-block">
-                    <h4>The Dynamics of Shared Trust</h4>
-                    <p>True verification happens out on public paths. These real-world runs monitor structural balance and handling responses while building absolute trust and genuine open-air connection between co-riders.</p>
-                </div>
-            </div>
-
-            <div class="content-row">
-                <div class="media-block">
-                    <img src="mumonbike.jpeg" alt="An elderly passenger waving from the recumbent front seat">
-                </div>
-                <div class="text-block">
-                    <h4>Accessible Public Navigation</h4>
-                    <p>Testing accessibility parameters with senior participants refines entry and exit comfort dynamics, returning presence and mobility to individuals within their shared neighborhood spaces.</p>
-                </div>
-            </div>
-
-            <div class="content-row invert">
-                <div class="media-block">
-                    <img src="Pkidsgirlsafrica.jpg" alt="Four-panel overview collage showing local children riding">
-                </div>
-                <div class="text-block">
-                    <h4>Youth Engagement Dynamics</h4>
-                    <p>Adaptive engineering serves as a focal point for neighborhood gathering. Localized play trials integrate younger generations, showing that accessible infrastructure fosters spontaneous playground inclusion.</p>
-                </div>
-            </div>
-
-            <div class="content-row">
-                <div class="media-block">
-                    <video controls muted>
-                        <source src="gangakidspilots.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="text-block">
-                    <h4>Empowering Future Pilots</h4>
-                    <p>True design longevity means building vehicles that are intuitive for everyone. Watching kids effortlessly take the controls during community testing sessions demonstrates the fluid responsiveness and balanced geometry of the tandem framework.</p>
-                </div>
-            </div>
-
-            <div class="content-row invert">
-                <div class="media-block">
-                    <video controls muted>
-                        <source src="indiankids1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="text-block">
-                    <h4>Cross-Cultural Testing Grounds</h4>
-                    <p>Shared movement knows no language barriers. Deploying and refining functional prototypes directly across global neighborhoods provides critical mechanical feedback while cementing deep solidarity through pure collaborative play.</p>
-                </div>
-            </div>
-
-            <div class="content-row">
-                <div class="media-block">
-                    <img src="disabled1.jpeg" alt="Riders navigating a custom tandem across rugged dirt road infrastructure">
-                </div>
-                <div class="text-block">
-                    <h4>Conquering Complex Terrain</h4>
-                    <p>Babalift vehicles are built for actual infrastructure conditions. Performance testing across unpaved paths evaluates fork rigidity and steering dampening systems to ensure safe handling on any route.</p>
-                </div>
-            </div>
-
-            <div class="content-row invert">
-                <div class="media-block">
-                    <img src="disabled2.jpeg" alt="Maneuvering an orange adaptive frame profile inside a public square">
-                </div>
-                <div class="text-block">
-                    <h4>Urban Agility Assessment</h4>
-                    <p>Maneuvering down congested urban walkways demands high turning responsiveness. Navigating tight corners verifies responsive steering alignment under active city conditions.</p>
-                </div>
-            </div>
-
-            <div class="content-row">
-                <div class="media-block">
-                    <img src="gangabest.jpeg" alt="The custom mobility design resting near a riverfront promenade walk">
-                </div>
-                <div class="text-block">
-                    <h4>Presence Along the Promenade</h4>
-                    <p>By blending naturally into daily public environments, the adaptive vehicle acts as an interactive catalyst, reframing conversations from static isolation to shared possibility.</p>
-                </div>
-            </div>
-
-            <div class="content-row invert">
-                <div class="media-block">
-                    <video controls muted>
-                        <source src="nasla.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="text-block">
-                    <h4>Campus Ride Experience</h4>
-                    <p>Live operational recordings inside university environments demonstrate smooth, vibration-isolated movement, providing the technical feedback necessary to finalize open-source replication data.</p>
-                </div>
-            </div>
-
-            <div class="content-row">
-                <div class="media-block">
-                    <img src="newsnewvision.jpg" alt="Historical newspaper snippet highlighting local structural implementations">
-                </div>
-                <div class="text-block">
-                    <h4>A Legacy of Advocacy</h4>
-                    <p>Our work is rooted in cross-cultural journeying. Media documentation records how simple hand-built frames have traveled thousands of kilometers, carrying an enduring message of community solidarity.</p>
-                </div>
-            </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div id="form-response"></div>
+            </form>
         </section>
     </main>
-
-    <!-- Project Partner Banner -->
-    <div class="partner-banner">
-        <p>In Collaboration With</p>
-        <img src="anymore-logo.png" alt="Anymore Onlus Logo">
-    </div>
 
     <footer>
         <p>&copy; 2026 babalift.org. Open Source. Shared for Solidarity.</p>
     </footer>
 
+    <!-- Native Lightbox Modal Code Architecture -->
+    <div id="lightbox-modal" class="modal-overlay">
+        <span class="modal-close" id="lightbox-close">&times;</span>
+        <img class="modal-img" id="lightbox-img" src="" alt="Expanded View Profile Overlay">
+    </div>
+
+    <script>
+        // Form Processing Script
+        const form = document.getElementById('web3-contact-form');
+        const responseDiv = document.getElementById('form-response');
+        const emailInput = document.getElementById('form-email');
+        const replyToInput = document.getElementById('form-replyto');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Map sender email parameter to default web3 reply chain structure
+            replyToInput.value = emailInput.value;
+            responseDiv.textContent = "Sending your message...";
+            responseDiv.style.color = "var(--primary-dark)";
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let res = await response.json();
+                if (response.status == 200) {
+                    responseDiv.textContent = "Thank you! Your message has been sent successfully.";
+                    responseDiv.style.color = "green";
+                    form.reset();
+                } else {
+                    responseDiv.textContent = res.message || "An error occurred. Please try again later.";
+                    responseDiv.style.color = "red";
+                }
+            })
+            .catch(error => {
+                responseDiv.textContent = "Form submission failed due to a network connection timeout.";
+                responseDiv.style.color = "red";
+            });
+        });
+
+        // Lightbox Expansion Core Handler Setup
+        const modal = document.getElementById('lightbox-modal');
+        const modalImg = document.getElementById('lightbox-img');
+        const modalClose = document.getElementById('lightbox-close');
+        const clickableImages = document.querySelectorAll('.clickable-media');
+
+        clickableImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                modal.classList.add('active');
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

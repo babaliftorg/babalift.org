@@ -4,71 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BaBaLift | Open-Source Inclusive Mobility</title>
+    <link rel="icon" type="image/png" href="babalift-logo.png">
     <style>
         :root {
             --sky-blue: #3ba3ec;
             --sunset-orange: #ff6f3c;
             --primary-dark: #111111;
             --text-main: #2b2b2b;
+            --bg-light: #fafafa;
+            --border-color: #eaeaea;
             --max-width: 960px;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: #fafafa; color: var(--text-main); line-height: 1.6; }
-        
-        /* Centered, balanced Header */
-        header { padding: 40px 20px; text-align: center; }
-        .welcome-text { font-size: 1.5rem; font-weight: 800; letter-spacing: 3px; color: var(--primary-dark); margin-bottom: 20px; display: block; }
-        .logo-stack { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .brand-logo { width: 160px; height: auto; }
-        .coop-logo { width: 200px; height: auto; margin-top: 5px; }
-        .powered-by { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: #888; letter-spacing: 2px; margin: 5px 0; }
-        
-        .intro-quote { max-width: 700px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        .intro-quote h2 { font-family: Georgia, serif; font-size: 1.8rem; font-weight: 400; color: var(--primary-dark); margin-bottom: 20px; }
-        .intro-quote p { font-size: 1.05rem; color: #444; text-align: justify; }
-
-        /* Centered Pyramid Values */
-        .values-container { max-width: 700px; margin: 40px auto; padding: 0 20px; }
-        .section-title { text-align: center; font-size: 1.2rem; color: var(--sky-blue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-        .values-list { list-style: none; padding: 0; margin: 0; text-align: center; }
-        .values-list li { font-size: 0.95rem; padding: 6px 0; color: #333; font-weight: 500; }
-        
-        .info-layout-block { max-width: 700px; margin: 40px auto; padding: 0 20px; }
-    </style>
-</head>
-<body>
-    <header>
-        <span class="welcome-text">WELCOME</span>
-        <div class="logo-stack">
-            <img src="babalift-logo.png" class="brand-logo" alt="BaBaLift Logo">
-            <span class="powered-by">Powered by</span>
-            <a href="https://anymoreonlus.org" target="_blank">
-                <img src="anymore-logo.png" class="coop-logo" alt="Anymore Onlus Logo">
-            </a>
-        </div>
-    </header>
-
-    <main>
-        <section class="intro-quote">
-            <h2>BaBaLift is a global movement that turns discarded metal into freedom.</h2>
-            <p>We build multi-seat, adaptive cycles from recycled parts. Our mission is to shatter the walls that keep people locked away from their communities, restoring the freedom of movement we all deserve. From the streets of Europe to the rural paths of Africa and the bustle of India, our prototypes are already in motion. We prove that local resourcefulness can spark global change. This setup is crafted to lift absolutely anyone, because the joy of moving together belongs to us all.</p>
-        </section>
-
-        <section class="values-container">
-            <h2 class="section-title">Values</h2>
-            <ul class="values-list">
-                <li>Human connection through movement | Breaking down social boundaries</li>
-                <li>Solidarity over profit | Prioritizing dignity over financial gain</li>
-                <li>Reuse and sustainability | Hand-crafting from salvaged waste</li>
-                <li>Open-source creativity | Sharing all our blueprints freely</li>
-                <li>Universal inclusion | Design for everyone</li>
-            </ul>
-        </section>
-
-        <section class="info-layout-block">
-            <h2 class="section-title">About Us</h2>
-            <p><strong>Mission:</strong> To create inclusive mobility that brings people together through shared journeys and freedom of movement.</p>
-            <p><strong>The Reality:</strong> It is never just about the cycle. The geometry of our frames creates a necessary, beautiful human connection between the pilot and the co-pilot. By repurposing what others discard, we foster health, economic independence, and environmental stewardship, all while rediscovering the simple enjoyment of a journey shared. This is not just a concept. We have documented the kilometers, the faces, the news clippings in Uganda, and the trials across Europe. These are our proof. We are not just inventing. We are validating a way for us all to move forward, together.</p>
-        </section>
-    </main>
-</body>
-</html>
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        nav { background: #ffffff; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; padding: 10px 15px; }
+        .menu { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px; list-style: none; padding: 0; }
+        .menu li { white-space: nowrap; }
+        .menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s ease; }
+        .menu a:hover { color: var(--sky-blue); }
+        header { max-width: var(--max-width); margin: 0 auto; padding: 30px 15px; text-align: center; }
+        .welcome-text { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; color: var(--primary-dark); margin-bottom: 25px; display: block; }
+        .logo-stack { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .brand-logo { width: 180px; height: auto; }
+        .coop-logo { width: 280px; height: auto; margin-top: 10px; transition: transform 0.2s ease; }
+        .coop-logo:hover { transform: scale(1.05); }
+        .powered-by { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #888;

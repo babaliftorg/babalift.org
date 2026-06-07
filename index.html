@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babalift | Open-Source Inclusive Mobility</title>
+    <link rel="icon" type="image/png" href="babalift-logo.png">
+    <style>
+        :root {
+            --sky-blue: #3ba3ec;
+            --sunset-orange: #ff6f3c;
+            --primary-dark: #111111;
+            --text-main: #2b2b2b;
+            --bg-light: #fafafa;
+            --border-color: #eaeaea;
+            --max-width: 960px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* Clean Top Navigation Bar */
+        header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img {
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+        }
+
+        .brand h1 {
+            font-size: 1.3rem;
+            margin: 0;
+            text-transform: lowercase;
+            letter-spacing: -0.5px;
+        }
+
+        .brand a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Inspiring Intro Section */
+        .intro-quote {
+            max-width: 700px;
+            margin: 60px auto 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .intro-quote h2 {
+            font-family: Georgia, serif;
+            font-size: 2.2rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--primary-dark);
+            margin: 0 0 20px 0;
+        }
+
+        .intro-quote h2 span {
+            color: var(--sunset-orange);
+        }
+
+        .intro-quote p {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Hero Image Layout (Historic Press Piece) */
+        .hero-container {
+            max-width: var(--max-width);
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .hero-box {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border-bottom: 4px solid var(--sky-blue);
+        }
+
+        .hero-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Structural Chapters */
+        .chapter-container {
+            max-width: var(--max-width);
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .chapter-header {
+            border-bottom: 2px solid var(--sky-blue);
+            padding-bottom: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .chapter-header h3 {
+            font-size: 1.2rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-dark);
+        }
+
+        .chapter-num {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--sunset-orange);
+            font-weight: bold;
+        }
+
+        /* Content Row Layouts */
+        .content-row {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .content-row {
+                flex-direction: row;
+                align-items: center;
+            }
+            .content-row.invert {
+                flex-direction: row-reverse;
+            }
+            .media-block, .text-block {
+                flex: 1;
+            }
+        }
+
+        .media-block img, .media-block video {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .text-block h4 {
+            font-size: 1.25rem;
+            margin: 0 0 12px 0;
+            color: var(--primary-dark);
+        }
+
+        .text-block p {
+            font-size: 1.05rem;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Partner Footer Banner */
+        .partner-banner {
+            max-width: var(--max-width);
+            margin: 80px auto 20px auto;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .partner-banner p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .partner-banner img {
+            height: 65px;
+            object-fit: contain;
+        }
+
+        /* Minimal Footer */
+        footer {
+            text-align: center;
+            padding: 20px 20px 40px 20px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Simple Top Navigation -->
+    <header>
+        <div class="brand">
+            <img src="babalift-logo.png" alt="Babalift Logo">
+            <h1><a href="/">babalift.org</a></h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Inspiring Quote Intro Section -->
+        <section class="intro-quote">
+            <h2>Built by hand. Powered by <span>solidarity</span>.</h2>
+            <p>Babalift develops open-source, multi-seat tandem blueprints designed to share the freedom of movement and restore independent human connection across communities.</p>
+        </section>
+
+        <!-- Main Historic Image Showcase -->
+        <section class="hero-container">
+            <div class="hero-box">
+                <img src="newsoncamera.jpg" alt="Historical press layout highlighting travel journeys for peace">
+            </div>
+        </section>
+
+        <!-- Chapter 1: Design -->
+        <section class="chapter-container">
+            <div class="chapter-header">
+                <h3>Chapter I: Design & Geometry Planning</h3>
+                <span class="chapter-num">01</span>
+            </div>
+            
+            <div class="content-row">
+                <div class="media-block">
+                    <img src="Dpencil.jpeg" alt="Technical pencil design blueprint on graph paper">
+                </div>
+                <div class="text-block">
+                    <h4>The Geometry of Inclusion</h4>
+                    <p>Every chassis begins on graph paper, calculating exact weight distribution, front-fork rigidity, and structural load balances. Repositioning the front rider into a recumbent posture lowers the center of gravity, maximizing comfort and handling safety.</p>
+                </div>
+            </div>
+
+            <div class="content-row invert">
+                <div class="media-block">
+                    <img src="Ddesign-colors.jpeg" alt="Digital 3D color model design layout">
+                </div>
+                <div class="text-block">
+                    <h4>Mapping Structural Pathways</h4>
+                    <p>Transitioning to digital render schemas allows precise analysis of tube intersections and high-stress points. Color mapping ensures independent global builders can interpret and replicate the assembly blueprint using localized materials.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Building -->
+        <section class="chapter-container">
+            <div class="chapter-header">
+                <h3>Chapter II: Workshop & Fabrication</h3>
+                <span class="chapter-num">02</span>
+            </div>
+
+            <div class="content-row">
+                <div class="media-block">
+                    <img src="Bcutting.jpeg" alt="Cutting frame components inside the workshop">
+                </div>
+                <div class="text-block">
+                    <h4>Precision Frame Sizing</h4>
+                    <p>Chassis elements are measured and cut by hand from standard structural steel. We prioritize readily accessible mechanical components so the vehicles can be built, maintained, and repaired easily in any local environment.</p>
+                </div>
+            </div>
+
+            <div class="content-row invert">
+                <div class="media-block">
+                    <img src="Bwelding1.jpeg" alt="Welding bicycle frame connections outdoors">
+                </div>
+                <div class="text-block">
+                    <h4>Fusing the Connections</h4>
+                    <p>Using standard stick welding units, individual junctions are permanently fused. This deliberate hands-on engineering gives the adaptive chassis the resilience required to navigate uneven infrastructure routes reliably.</p>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="media-block">
+                    <img src="Bcompactable.jpeg" alt="Fully folded grey bicycle chassis frame">
+                </div>
+                <div class="text-block">
+                    <h4>Compact Portable Engineering</h4>
+                    <p>Logistical constraints shouldn't limit community access. The prototype frame features specialized folding joints, reducing its storage footprint for effortless transportation and international relocation transitions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: Community -->
+        <section class="chapter-container">
+            <div class="chapter-header">
+                <h3>Chapter III: Community Integration & Operations</h3>
+                <span class="chapter-num">03</span>
+            </div>
+
+            <div class="content-row invert">
+                <div class="media-block">
+                    <img src="annavos.jpg" alt="Two riders during open-air road trials">
+                </div>
+                <div class="text-block">
+                    <h4>The Dynamics of Shared Trust</h4>
+                    <p>True verification happens out on public paths. These real-world runs monitor structural balance and handling responses while building absolute trust and genuine open-air connection between co-riders.</p>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="media-block">
+                    <img src="mumonbike.jpeg" alt="An elderly passenger waving from the recumbent front seat">
+                </div>
+                <div class="text-block">
+                    <h4>Accessible Public Navigation</h4>
+                    <p>Testing accessibility parameters with senior participants refines entry and exit comfort dynamics, returning presence and mobility to individuals within their shared neighborhood spaces.</p>
+                </div>
+            </div>
+
+            <div class="content-row invert">
+                <div class="media-block">
+                    <img src="Pkidsgirlsafrica.jpg" alt="Four-panel overview collage showing local children riding">
+                </div>
+                <div class="text-block">
+                    <h4>Youth Engagement Dynamics</h4>
+                    <p>Adaptive engineering serves as a focal point for neighborhood gathering. Localized play trials integrate younger generations, showing that accessible infrastructure fosters spontaneous playground inclusion.</p>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="media-block">
+                    <video controls muted>
+                        <source src="gangakidspilots.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="text-block">
+                    <h4>Empowering Future Pilots</h4>
+                    <p>True design longevity means building vehicles that are intuitive for everyone. Watching kids effortlessly take the controls during community testing sessions demonstrates the fluid responsiveness and balanced geometry of the tandem framework.</p>
+                </div>
+            </div>
+
+            <div class="content-row invert">
+                <div class="media-block">
+                    <video controls muted>
+                        <source src="indiankids1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="text-block">
+                    <h4>Cross-Cultural Testing Grounds</h4>
+                    <p>Shared movement knows no language barriers. Deploying and refining functional prototypes directly across global neighborhoods provides critical mechanical feedback while cementing deep solidarity through pure collaborative play.</p>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="media-block">
+                    <img src="disabled1.jpeg" alt="Riders navigating a custom tandem across rugged dirt road infrastructure">
+                </div>
+                <div class="text-block">
+                    <h4>Conquering Complex Terrain</h4>
+                    <p>Babalift vehicles are built for actual infrastructure conditions. Performance testing across unpaved paths evaluates fork rigidity and steering dampening systems to ensure safe handling on any route.</p>
+                </div>
+            </div>
+
+            <div class="content-row invert">
+                <div class="media-block">
+                    <img src="disabled2.jpeg" alt="Maneuvering an orange adaptive frame profile inside a public square">
+                </div>
+                <div class="text-block">
+                    <h4>Urban Agility Assessment</h4>
+                    <p>Maneuvering down congested urban walkways demands high turning responsiveness. Navigating tight corners verifies responsive steering alignment under active city conditions.</p>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="media-block">
+                    <img src="gangabest.jpeg" alt="The custom mobility design resting near a riverfront promenade walk">
+                </div>
+                <div class="text-block">
+                    <h4>Presence Along the Promenade</h4>
+                    <p>By blending naturally into daily public environments, the adaptive vehicle acts as an interactive catalyst, reframing conversations from static isolation to shared possibility.</p>
+                </div>
+            </div>
+
+            <div class="content-row invert">
+                <div class="media-block">
+                    <video controls muted>
+                        <source src="nasla.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="text-block">
+                    <h4>Campus Ride Experience</h4>
+                    <p>Live operational recordings inside university environments demonstrate smooth, vibration-isolated movement, providing the technical feedback necessary to finalize open-source replication data.</p>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="media-block">
+                    <img src="newsnewvision.jpg" alt="Historical newspaper snippet highlighting local structural implementations">
+                </div>
+                <div class="text-block">
+                    <h4>A Legacy of Advocacy</h4>
+                    <p>Our work is rooted in cross-cultural journeying. Media documentation records how simple hand-built frames have traveled thousands of kilometers, carrying an enduring message of community solidarity.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Partner Banner -->
+    <div class="partner-banner">
+        <p>In Collaboration With</p>
+        <img src="anymore-logo.png" alt="Anymore Onlus Logo">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 babalift.org. Open Source. Shared for Solidarity.</p>
+    </footer>
+
+</body>
+</html>
